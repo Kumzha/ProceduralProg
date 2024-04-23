@@ -1,0 +1,22 @@
+1. Funkcijos ir duomenys yra apibrežiami camelCase būdų
+2. Laužtiniai skliaustai atsidaro ir užsidaro naujoje eilutėje, taip, kad kodas matytusi aiškiai viduryje, 
+   laužtiniai skliaustai išlieka tame pačiame stulpelyje.
+3. Atidarius laužtinius skliaustus, kodas viduje skliaustų rašomas per vieną \t (tab) nuo skliaustų stulpelio.
+
+Geras pavyzdys:
+
+    if (readingFile == NULL)
+    {
+        printf("Jusu nurodyto failo nepavyko atidaryti.\n");
+        free(reading);
+        return;
+    }
+
+Blogas pavyzdys:
+    if (readingFile == NULL){
+        printf("Jusu nurodyto failo nepavyko atidaryti.\n");
+        free(reading);
+        return;
+    }
+
+4. Funkcijos rašomos anliškai vardan panaudojimo iš naujo.

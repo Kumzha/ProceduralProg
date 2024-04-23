@@ -1,0 +1,47 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Nov 21 17:39:45 2023
+
+@author: User
+"""
+import re
+import string
+from collections import Counter
+
+def scan_file(filename):
+    with open(filename, "r", encoding="utf8") as f:
+        lines = f.readlines()
+    
+    words = []
+    for line in lines:
+        line = re.sub(r"[^\w\s]", "", line)
+        line = line.strip()
+    
+        words.extend(line.split())
+    
+    word_counts = Counter(words)
+    
+    most_used_words = word_counts.most_common(50)
+    
+
+    longest_word = max(words, key=len)
+    max_len = len(longest_word)
+    
+    flask1 = {
+        "words": most_used_words,
+        "length": max_len
+    }
+
+    return longest_word, max_len, most_used_words, flask1
+
+def main():
+    filename = "Metai.txt"
+    longest_word, max_len, most_used_words, flask1 = scan_file(filename)
+    print("Longest word:", longest_word)
+    print("Length of longest word:", max_len)
+    print("50 most used words:")
+    print(flask1)
+
+if __name__ == "__main__":
+    main()
+    
